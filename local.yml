@@ -1,0 +1,50 @@
+---
+- hosts: localhost
+  connection: local
+  tags: always
+  become: true
+
+  pre_tasks:
+    - name: update and upgrade packages
+      apt:
+        upgrade: 'yes'
+        update_cache: yes
+        cache_valid_time: 86400 
+      when: ansible_distribution in ["Debian", "Ubuntu", "Pop!_OS"]
+
+
+  tasks: 
+  - name: install utilities
+    package:
+      name: 
+        - htop
+        - vim 
+        - gufw
+        - apt-transport-https
+        - ca-certificates
+        - curl
+        - gnupg
+        - lsb-release
+  
+  - name: install development libraries
+    package: 
+      name:  
+        - libsdl2-dev
+        - cmake 
+        - gcc
+  # when: libdev is defined and libdev == true
+  
+  - name: install virtualisation packages
+    package: 
+      name:
+        - virt-manager
+  # when: virt is defined and virt == true
+
+  - name: set up development environment
+    package:
+      name: 
+        - docker-ce
+        - docker-ce-cli
+        - containerd.io
+        - lxc
+  
