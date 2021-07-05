@@ -12,7 +12,6 @@
         cache_valid_time: 86400 
       when: ansible_distribution in ["Debian", "Ubuntu", "Pop!_OS"]
 
-
   tasks: 
   - name: install utilities
     package:
@@ -25,6 +24,21 @@
         - curl
         - gnupg
         - lsb-release
+        - gsound
+        - ranger
+        - mpv
+        - firejail
+  
+  tasks: 
+  - name: install base programs
+    package:
+      name: 
+        - gimp
+        - pitivi
+        - gnome-sound-recorder
+        - handbrake
+        - gnome-mpv
+        - cherrytree
   
   - name: install development libraries
     package: 
@@ -32,6 +46,8 @@
         - libsdl2-dev
         - cmake 
         - gcc
+        - gdb
+        
   # when: libdev is defined and libdev == true
   
   - name: install virtualisation packages
@@ -46,5 +62,6 @@
         - docker-ce
         - docker-ce-cli
         - containerd.io
-        - lxc
+        - lxd
+          # - kubectl
   
