@@ -1,0 +1,5 @@
+- name: install package | gnome-sound-recorder
+  package:
+    name: 
+      - gnome-sound-recorder
+  #when: gnome-sound-recorder is defined and gnome-sound-recorder == true

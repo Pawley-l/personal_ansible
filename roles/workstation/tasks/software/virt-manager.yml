@@ -1,0 +1,5 @@
+- name: install package | virt-manager
+  package:
+    name: 
+      - virt-manager
+  #when: virt-manager is defined and virt-manager == true

@@ -1,0 +1,5 @@
+- name: install package | gimp
+  package:
+    name: 
+      - cherrytree
+  #when: cherrytree is defined and cherrytree == true

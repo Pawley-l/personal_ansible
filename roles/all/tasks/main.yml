@@ -1,0 +1,18 @@
+- name: packages | base utilities
+  package:
+    name: 
+      - htop
+      - vim 
+      - gufw
+      - apt-transport-https
+      - ca-certificates
+      - curl
+      - gnupg
+      - lsb-release
+      - ranger
+      - mpv
+      - firejail
+      - libsdl2-dev
+      - cmake 
+      - gcc
+      - gdb

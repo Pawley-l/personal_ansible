@@ -1,6 +1,4 @@
----
-- hosts: localhost
-  connection: local
+- hosts: all
   tags: always
   become: true
 
@@ -11,57 +9,17 @@
         update_cache: yes
         cache_valid_time: 86400 
       when: ansible_distribution in ["Debian", "Ubuntu", "Pop!_OS"]
+  
 
-  tasks: 
-  - name: install utilities
-    package:
-      name: 
-        - htop
-        - vim 
-        - gufw
-        - apt-transport-https
-        - ca-certificates
-        - curl
-        - gnupg
-        - lsb-release
-        - gsound
-        - ranger
-        - mpv
-        - firejail
-  
-  tasks: 
-  - name: install base programs
-    package:
-      name: 
-        - gimp
-        - pitivi
-        - gnome-sound-recorder
-        - handbrake
-        - gnome-mpv
-        - cherrytree
-  
-  - name: install development libraries
-    package: 
-      name:  
-        - libsdl2-dev
-        - cmake 
-        - gcc
-        - gdb
-        
-  # when: libdev is defined and libdev == true
-  
-  - name: install virtualisation packages
-    package: 
-      name:
-        - virt-manager
-  # when: virt is defined and virt == true
+- hosts: all
+  tags: all
+  become: true
+  roles: 
+    - all
 
-  - name: set up development environment
-    package:
-      name: 
-        - docker-ce
-        - docker-ce-cli
-        - containerd.io
-        - lxd
-          # - kubectl
-  
+- hosts: workstation
+  tags: workstation
+  become: true
+  roles:
+    - workstation
+

@@ -1,0 +1,5 @@
+- name: install package | obs-studio
+  package:
+    name: 
+      - obs-studio
+  when: obs is defined and obs == true

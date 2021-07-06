@@ -1,0 +1,5 @@
+- name: install package | gnome-mpv
+  package:
+    name: 
+      - gnome-mpv
+  #when: gnome-mpv is defined and gnome-mpv == true
