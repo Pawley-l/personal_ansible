@@ -22,4 +22,3 @@
   become: true
   roles:
     - workstation
-

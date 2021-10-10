@@ -1,0 +1,13 @@
+- name: fix snap
+  command: snap install core
+
+- name: install package | jetbrains tools
+  snap:
+    name: 
+      - clion
+      - rider 
+      - datagrip
+      - intellij-idea-ultimate
+      - goland
+      - pycharm-professional
+    classic: yes

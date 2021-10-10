@@ -1,18 +1,14 @@
 - block: 
   # Software
-  - include_tasks: software/gimp.yml
-  - include_tasks: software/handbrake.yml
-  - include_tasks: software/pitvi.yml
-  - include_tasks: software/gnome-sound-recorder.yml
-  - include_tasks: software/gnome-mpv.yml
-  - include_tasks: software/obs-studio.yml
-  - include_tasks: software/cherrytree.yml
-  - include_tasks: software/virt-manager.yml
-  
-  # Development
-  - include_tasks: development/docker.yml
-  - include_tasks: development/lxd.yml
-  
+  #- include_tasks: software/gimp.yml
+  #- include_tasks: software/handbrake.yml
+  #- include_tasks: software/pitvi.yml
+  #- include_tasks: software/gnome-sound-recorder.yml
+  #- include_tasks: software/gnome-mpv.yml
+  #- include_tasks: software/obs-studio.yml
+  #- include_tasks: software/cherrytree.yml
+  #- include_tasks: software/virt-manager.yml
+  - include_tasks: software/jetbrains.yml
   # Desktop
   
   # settings

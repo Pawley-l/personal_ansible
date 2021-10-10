@@ -1,4 +1,0 @@
-- name: install package | lxd
-  package:
-    name: 
-      - lxd

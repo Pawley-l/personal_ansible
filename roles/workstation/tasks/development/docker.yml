@@ -1,7 +1,0 @@
-- name: install package | docker
-  package:
-    name: 
-      - docker-ce
-      - docker-ce-cli
-      - containerd.io
-
